@@ -99,7 +99,6 @@ pipeline {
                             sed -i "s#image:.*#image: $REPOSITORY_URI$AWS_ECR_REPO_NAME:$BUILD_NUMBER#g" deployment.yaml
                             git add .
                             git commit -m "Update deployment Image to version \${BUILD_NUMBER}"
-                            git remote add origin https://github.com/anildash1234/fpjt.git
                             git push  origin main
         
                         '''
