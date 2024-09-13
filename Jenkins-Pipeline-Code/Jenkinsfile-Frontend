@@ -76,12 +76,8 @@ pipeline {
                 }
             }
         }
-        stage("TRIVY Image Scan") {
-            steps {
-            
-                sh 'trivy image  043309339412.dkr.ecr.ap-south-1.amazonaws.com/front:latest:${BUILD_NUMBER}  > trivyimage.txt'
-            }
-        }
+        
+        
         stage('Checkout Code') {
             steps {
                 git branch: 'main', url: 'https://github.com/anildash1234/fpjt.git'
