@@ -87,10 +87,10 @@ pipeline {
             environment {
                 GIT_REPO_NAME = "fpjt"
                 GIT_USER_NAME = "anildash1234"
+                 GIT_PASSWORD = "Globallogic@786"
             }
             steps {
                 dir('Kubernetes-Manifests-file/Frontend') {
-                    withCredentials([string(credentialsId: 'GITHUB_TOKEN', variable: 'GIT')]) {
                         sh '''
                             git config user.email "anildash1234@gmail.com"
                             git config user.name "anildash1234"
@@ -99,7 +99,7 @@ pipeline {
                             sed -i "s#image:.*#image: $REPOSITORY_URI$AWS_ECR_REPO_NAME:$BUILD_NUMBER#g" deployment.yaml
                             git add .
                             git commit -m "Update deployment Image to version \${BUILD_NUMBER}"
-                            git push  origin main
+                            git push -u  main
         
                         '''
                     }
@@ -107,6 +107,5 @@ pipeline {
             }
         }
     }
-}
      
          
