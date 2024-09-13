@@ -90,7 +90,7 @@ pipeline {
                  GIT_PASSWORD = "Globallogic@786"
             }
             steps {
-                dir('Kubernetes-Manifests-file/Frontend') {
+                dir('Kubernetes-Manifests-file/Database') {
                         sh '''
                             BUILD_NUMBER=${BUILD_NUMBER}
                             echo $BUILD_NUMBER
