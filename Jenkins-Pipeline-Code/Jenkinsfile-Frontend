@@ -4,6 +4,8 @@ pipeline {
         nodejs 'NODEJS'
     }
     environment  {
+        AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
         SCANNER_HOME=tool 'SONAR'
         AWS_ACCOUNT_ID = credentials('ACCOUNT_ID')
         AWS_ECR_REPO_NAME = credentials('ECR_REPO1')
