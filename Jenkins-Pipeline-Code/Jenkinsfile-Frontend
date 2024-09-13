@@ -78,8 +78,8 @@ pipeline {
         }
         stage("TRIVY Image Scan") {
             steps {
-                sh 'docker pull  043309339412.dkr.ecr.{AWS_DEFAULT_REGION}.amazonaws.com/${AWS_ECR_REPO_NAME}:${BUILD_NUMBER}'
-                sh 'trivy image  043309339412.dkr.ecr.{AWS_DEFAULT_REGION}.amazonaws.com/${AWS_ECR_REPO_NAME}:${BUILD_NUMBER} > trivyimage.txt' 
+                sh 'docker pull  ${REPOSITORY_URI}${AWS_ECR_REPO_NAME}:${BUILD_NUMBER}'
+                sh 'trivy image  ${REPOSITORY_URI}${AWS_ECR_REPO_NAME}:${BUILD_NUMBER} > trivyimage.txt'
             }
         }
         stage('Checkout Code') {
