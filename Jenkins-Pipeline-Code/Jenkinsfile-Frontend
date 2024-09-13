@@ -99,7 +99,7 @@ pipeline {
                             sed -i "s#image:.*#image: $REPOSITORY_URI$AWS_ECR_REPO_NAME:$BUILD_NUMBER#g" deployment.yaml
                             git add .
                             git commit -m "Update deployment Image to version \${BUILD_NUMBER}"
-                            git push 'https://${GITHUB_TOKEN}@github.com/anildash1234/fpjt.git' HEAD:main
+                            git push ' git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main' HEAD:main
         
                         '''
                     }
