@@ -80,7 +80,7 @@ pipeline {
             steps {
             
                 sh 'docker pull   043309339412.dkr.ecr.ap-south-1.amazonaws.com/front:latest'
-                sh 'trivy image  ${REPOSITORY_URI}${AWS_ECR_REPO_NAME}:${BUILD_NUMBER} > trivyimage.txt'
+                sh 'trivy image  043309339412.dkr.ecr.ap-south-1.amazonaws.com/front:latest:${BUILD_NUMBER} > trivyimage.txt'
             }
         }
         stage('Checkout Code') {
