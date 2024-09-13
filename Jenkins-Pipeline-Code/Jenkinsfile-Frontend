@@ -71,8 +71,8 @@ pipeline {
             steps {
                 script {
                         sh ' aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 043309339412.dkr.ecr.ap-south-1.amazonaws.com'
-                        sh 'docker tag ${AWS_ECR_REPO_NAME} ${REPOSITORY_URI}${AWS_ECR_REPO_NAME}:${BUILD_NUMBER}'
-                        sh 'docker push ${REPOSITORY_URI}${AWS_ECR_REPO_NAME}:${BUILD_NUMBER}'
+                        sh 'docker tag front:latest 043309339412.dkr.ecr.ap-south-1.amazonaws.com/front:latest'
+                        sh 'docker push 043309339412.dkr.ecr.ap-south-1.amazonaws.com/front:latest'
                 }
             }
         }
