@@ -52,7 +52,7 @@ pipeline {
         stage('Trivy File Scan') {
             steps {
                 dir('Application-Code/frontend') {
-                    sh 'trivy fs . > trivyfs.txt'
+                    sh 'trivy fs . > trivyimage.txt'
                 }
             }
         }
@@ -79,7 +79,7 @@ pipeline {
         stage("TRIVY Image Scan") {
             steps {
             
-                sh 'trivy image  043309339412.dkr.ecr.ap-south-1.amazonaws.com/front:latest:${BUILD_NUMBER} . > trivyfs.txt'
+                sh 'trivy image  043309339412.dkr.ecr.ap-south-1.amazonaws.com/front:latest:${BUILD_NUMBER}  > trivyimage.txt'
             }
         }
         stage('Checkout Code') {
