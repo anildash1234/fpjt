@@ -25,7 +25,7 @@ spec:
       - name: ecr-registry-secret
       containers:
       - name: frontend
-        image:  0433-0933-9412.dkr.ecr.ap-south-1.amazonaws.com/front:41
+        image:  0433-0933-9412.dkr.ecr.ap-south-1.amazonaws.com/front:42
         imagePullPolicy: Always
         env:
           - name: REACT_APP_BACKEND_URL
