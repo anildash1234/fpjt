@@ -37,12 +37,13 @@ sudo yum -y install terraform
 sudo yum install maven -y
 
 #---------------------------kubectl install ---------------
-sudo curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
+ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
 sudo chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin 
-# -----------------------------eksctl install--------------------------------
-sudo curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
-sudo mv /tmp/eksctl /usr/local/bin
+# -----------------------------eksctl install-----------------------------
+curl -LO https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz
+tar -xvf eksctl_Linux_amd64.tar.gz
+sudo mv /root/eksctl /usr/local/bin
 
 #---------------------------Helm install--------------------
 #https://github.com/helm/helm/releases
