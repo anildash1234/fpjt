@@ -10,6 +10,8 @@ helm install stable prometheus-community/kube-prometheus-stack -n prometheus
 
 #prometheus elb url:9090
 #grafana elb url/login
+#to login to grafana
+#kubectl get secret --namespace prometheus stable-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 
 
 #----------------EBS CSI Driver for Kubernetes volumes 
