@@ -8,6 +8,9 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 kubectl create namespace Prometheus
 helm install stable prometheus-community/kube-prometheus-stack -n prometheus
 
+#prometheus elb url:9090
+#grafana elb url/login
+
 
 #----------------EBS CSI Driver for Kubernetes volumes 
 helm repo add aws-ebs-csi-driver https://kubernetes-sigs.github.io/aws-ebs-csi-driver
